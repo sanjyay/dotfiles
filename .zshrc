@@ -5,7 +5,6 @@ ZSH=/usr/share/oh-my-zsh/
 plugins=( git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting )
 source $ZSH/oh-my-zsh.sh
 
-
 # Detect the AUR wrapper
 if pacman -Qi yay &>/dev/null ; then
    aurhelper="yay"
