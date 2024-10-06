@@ -1,7 +1,7 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | sort -R | head -1)",
+        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | shuf -n 1)",
         "height": 18
     },
     "display": {
@@ -10,7 +10,7 @@
     "modules": [
         {
             "type": "custom",
-            "format": "\u001b[36m  ☯ ゼンフル "
+            "format": "\u001b[36m    コンピューター"
         },
         {
             "type": "custom",
@@ -78,20 +78,31 @@
             "keyColor": "magenta"
         },
         {
-            "type": "memory",
+             "type": "memory",
             "key": "  ﬙ Memory",
             "keyColor": "magenta"
+        },      
+        {
+            "type": "command",
+            "key": "  󱦟 OS Age ",
+            "keyColor": "31",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
+        },
+        {
+            "type": "uptime",
+            "key": "  󱫐 Uptime ",
+            "keyColor": "red"
         },
         {
             "type": "custom",
             "format": "└──────────────────────────────────────────┘"
         },
-        "break",
-        {
+	{
             "type": "colors",
             "paddingLeft": 2,
             "symbol": "circle"
         },
         "break"
+        
     ]
 }

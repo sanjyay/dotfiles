@@ -15,25 +15,12 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/padd","custom/l_end","hyprland/workspaces","custom/r_end","custom/l_end","cpu","custom/r_end","custom/l_end","memory","custom/r_end","custom/l_end","custom/cpuinfo","custom/r_end","","custom/padd"],
+	"modules-left": ["custom/padd","custom/l_end","cpu","memory","custom/cpuinfo","custom/r_end","custom/l_end","hyprland/workspaces","","custom/r_end","","custom/padd"],
 	"modules-center": ["custom/padd","","custom/l_end","clock","custom/r_end","","custom/padd"],
-	"modules-right": ["custom/padd","","custom/l_end","pulseaudio","pulseaudio#microphone","custom/r_end","custom/l_end","network","tray","custom/updates","custom/keybindhint","custom/r_end","custom/l_end","battery","custom/r_end","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/l_end","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end","custom/l_end","privacy","tray","battery","custom/r_end","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
-
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "rotate": 0,
-        "all-outputs": true,
-        "active-only": false,
-        "on-click": "activate",
-        "disable-scroll": false,
-        "on-scroll-up": "hyprctl dispatch workspace -1",
-        "on-scroll-down": "hyprctl dispatch workspace +1",
-        "persistent-workspaces": {
-        }
-    },
 
     "cpu": {
         "interval": 10,
@@ -71,11 +58,24 @@
         "max-length": 1000
     },
 
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "rotate": 0,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "disable-scroll": false,
+        "on-scroll-up": "hyprctl dispatch workspace -1",
+        "on-scroll-down": "hyprctl dispatch workspace +1",
+        "persistent-workspaces": {
+        }
+    },
+
     "clock": {
-        "format": "{:%a, %d %b, %I:%M %p}",
+        "format": "{:%d %a 󰃭 %H:%M}",
         "rotate": 0,
         "format-alt": "{:%R 󰃭 %d·%m·%y}",
-        "tooltip-format": "<tt>{calendar}</tt>",
+        "tooltip-format": "<span>{calendar}</span>",
         "calendar": {
             "mode": "month",
             "mode-mon-col": 3,
@@ -131,25 +131,6 @@
     "scroll-step": 5
 },
 
-    "network": {
-        "tooltip": true,
-        "format-wifi": " ",
-        "rotate": 0,
-        "format-ethernet": "󰈀 ",
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-        "format-linked": "󰈀 {ifname} (No IP)",
-        "format-disconnected": "󰖪 ",
-        "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
-        "interval": 2,
-    },
-
-    "tray": {
-        "icon-size": 16,
-        "rotate": 0,
-        "spacing": 5
-    },
-
     "custom/updates": {
         "exec": "systemupdate.sh",
         "return-type": "json",
@@ -160,10 +141,28 @@
         "tooltip": true,
         "signal": 20,
     },
-    "custom/keybindhint": {
-        "format": " ",
+    "privacy": {
+        "icon-size": 12,
+        "icon-spacing": 5,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+
+    "tray": {
+        "icon-size": 16,
         "rotate": 0,
-        "on-click": "keybinds_hint.sh"
+        "spacing": 5
     },
 
     "battery": {
