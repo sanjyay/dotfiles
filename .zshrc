@@ -60,7 +60,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias ll='ls -a'
-alias vim='nvim'
+alias vim='bash ~/.config/kitty/kitty.sh' # or your custom path
 
 # Shell integrations
 eval "$(fzf --zsh)"
