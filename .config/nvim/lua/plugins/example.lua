@@ -11,7 +11,10 @@ if true then return {} end
 return {
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
-
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
