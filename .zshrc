@@ -1,4 +1,4 @@
-# Start tmux only if not already inside a tmux session
+# Start tmux only if not already inide a tmux session
 if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
   tmux
 fi
@@ -65,8 +65,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias ll='ls -a'
-alias vim='bash ~/.config/kitty/kitty.sh' # or your custom path
+#alias vim='bash ~/.config/kitty/kitty.sh' # or your custom path
+alias vim='nvim'
+alias conda-init='eval "$(/home/goblin/build/miniconda3/bin/conda shell.zsh hook)"'
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
