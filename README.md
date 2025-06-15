@@ -10,12 +10,12 @@ pacman -S git stow
 
 ```
 pacman -S tmux
+```
 
 ## To install miniconda3(conda) 
 
 https://www.anaconda.com/docs/getting-started/miniconda/install#linux
 
-```
 ```
 mkdir -p ~/build/miniconda3
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/build/miniconda3/miniconda.sh
