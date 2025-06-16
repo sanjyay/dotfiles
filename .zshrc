@@ -1,8 +1,12 @@
 # Start tmux only if not already inide a tmux session
-if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
-  tmux
-fi
-
+#if [[ $- == *i* ]] && command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ]; then
+  # Attach to existing session or create a new one
+#  if tmux has-session -t auto 2>/dev/null; then
+#    exec tmux attach-session -t auto
+#  else
+#    exec tmux new-session -s auto
+#  fi
+#fi
 # Set the directory
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
