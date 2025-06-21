@@ -69,6 +69,8 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Aliases
 alias ls='ls --color'
 alias ll='ls -a'
+alias rm='trash -v'
+
 #alias vim='bash ~/.config/kitty/kitty.sh' # or your custom path
 alias vim='nvim'
 alias conda-init='eval "$(/home/goblin/build/miniconda3/bin/conda shell.zsh hook)"'
@@ -77,3 +79,10 @@ alias conda-init='eval "$(/home/goblin/build/miniconda3/bin/conda shell.zsh hook
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+#unalias yayf 2>/dev/null
+
+yayf() {
+  yay -Slq | fzf --multi \
+    --preview 'script -q -c "yay -Sii {1}" /dev/null' \
+    --preview-window=down:75% | xargs -ro yay -S
+}
