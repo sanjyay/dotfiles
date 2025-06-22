@@ -86,3 +86,10 @@ yayf() {
     --preview 'script -q -c "yay -Sii {1}" /dev/null' \
     --preview-window=down:75% | xargs -ro yay -S
 }
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
