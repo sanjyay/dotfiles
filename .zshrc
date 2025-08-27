@@ -70,7 +70,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 alias ls='ls --color'
 alias ll='ls -a'
 alias rm='trash -v'
-
+alias jup='sudo docker run -it --rm -p 8889:8888 \
+  -v "$PWD":/home/jovyan/work \
+  jupyter-latex'
 #alias vim='bash ~/.config/kitty/kitty.sh' # or your custom path
 alias vim='nvim'
 alias conda-init='eval "$(/home/goblin/build/miniconda3/bin/conda shell.zsh hook)"'
@@ -93,3 +95,7 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools

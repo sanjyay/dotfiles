@@ -1,7 +1,7 @@
 
     # Font
-    #font-family = JetBrainsMono Nerd Font
-    font-size = 18
+    font-family = JetBrainsMono Nerd Font
+    font-size = 25
     font-thicken = true
 
     bold-is-bright = false
@@ -10,8 +10,9 @@
     # Theme
 #    theme = "catppuccin-macchiato"
    theme = "catppuccin-mocha"
-
-    #background-opacity = 0.9
+#    theme = "Everforest Dark - Hard"
+#     theme = "Earthsong"
+    background-opacity = 1
 
     cursor-style = bar
     cursor-style-blink = true
