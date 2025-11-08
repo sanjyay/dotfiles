@@ -37,3 +37,13 @@ Search about:config in the url bar
 full-screen-api.ignore-widgets
 ```
 toggle to true
+
+## Oh-my-posh
+
+
+````
+```curl -s https://ohmyposh.dev/install.sh | bash -s``
+```
+```
+
+```

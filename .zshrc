@@ -18,7 +18,7 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Initializing oh-my-posh
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+eval "$(~/.local/bin/oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
