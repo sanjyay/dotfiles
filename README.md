@@ -40,9 +40,10 @@ toggle to true
 
 ## Oh-my-posh
 
-
-````
-```curl -s https://ohmyposh.dev/install.sh | bash -s``
+```
+curl -s https://ohmyposh.dev/install.sh | bash -s
+```
+```
 ```
 ```
 
