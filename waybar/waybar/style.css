@@ -1,0 +1,99 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "CaskaydiaMono Nerd Font", monospace;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+window#waybar {
+  background: transparent;
+  margin-top: 2px;
+  padding: 0;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  padding: 0;
+  margin-left: 0;
+}
+
+mpris#waybar.empty #mpris {
+  background: transparent;
+  padding: 0;
+  margin-right: 0;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+/* === Pill Modules === */
+#memory,
+#custom-update,
+#backlight,
+#window,
+#mpris,
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#clock,
+#custom-omarchy,
+#workspaces,
+#tray-expander {
+  background-color: rgba(10, 7, 22, 0.55); /* translucent backdrop */
+  color: @foreground;
+  border: 1.5px solid rgba(255, 255, 255, 0.9); /* clean white border */
+  border-radius: 10px; /* same rounding as original */
+  padding: 0 10px; /* exactly like your base config */
+  margin: 5px 2px; /* same spacing */
+  min-height: 0;
+}
+
+/* === Minor adjustments === */
+#memory {
+  margin-right: -10px;
+}
+
+#pulseaudio {
+  padding-right: 15px;
+}
+
+#custom-omarchy {
+  padding-left: 10px;
+}
+
+#custom-update {
+  padding-left: 7px; 
+}
+
+#custom-expand-icon {
+  margin-right: -4px;
+}
+
+tooltip {
+  border-radius: 10px;
+  padding: 2px;
+}

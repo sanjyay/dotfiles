@@ -1,0 +1,9 @@
+#custom-archlogo {
+font-size: 30px;
+margin: 0 10px;
+color: #ffffff; 
+}
+workspaces button:focus {
+outline: none;
+box-shadow: none;
+}

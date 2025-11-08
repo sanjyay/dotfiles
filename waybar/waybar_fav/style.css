@@ -1,0 +1,156 @@
+@import "../omarchy/current/theme/waybar.css";
+
+/* === GLOBAL === */
+* {
+  background-color: transparent;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 13px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* === BASE BAR === */
+window#waybar {
+  background: transparent;
+  border: none;
+  transition: background-color 0.5s ease;
+}
+
+/* === MODULE LAYOUT === */
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+/* === WORKSPACES === */
+#workspaces {
+  background: @background;
+  margin: 4px 8px;
+  padding: 4px 5px;
+  border-radius: 10px;
+  font-size: 13px;
+  border: 2px solid @foreground;
+  opacity: 0.95;
+}
+
+#workspaces button {
+  all: unset;
+  padding: 2px 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  color: #fff;
+  opacity: 1; /* base opacity for active/occupied */
+  transition: all 0.15s ease-in-out;
+}
+
+/* Empty workspaces (no windows) */
+#workspaces button.empty {
+  opacity: 0.45;
+}
+
+/* Occupied workspaces (have windows but not active) */
+#workspaces button:not(.empty):not(.active) {
+  opacity: 0.9;
+  color: #cdd6f4;
+}
+
+/* Active workspace */
+#workspaces button.active {
+  background: @color4;
+  color: #fff;
+  opacity: 1;
+  padding: 2px 14px;
+  border-radius: 8px;
+}
+
+/* Hover effect */
+#workspaces button:hover {
+  background: @color4;
+  opacity: 0.85;
+}
+
+/* === TOOLTIP === */
+tooltip {
+  border-radius: 8px;
+  background: @background;
+  opacity: 0.9;
+  padding: 6px 10px;
+}
+tooltip label {
+  color: #fff;
+}
+
+/* === MODULES === */
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update {
+  background: @background;
+  color: #fff;
+  border-radius: 10px;
+  margin: 3px 6px;
+  padding: 3px 10px;
+  opacity: 0.9;
+}
+
+#custom-expand-icon {
+  margin-right: 7px;
+}
+
+/* === UPDATE + SCREEN RECORD INDICATORS === */
+#custom-update {
+  font-size: 11px;
+  color: @color2;
+}
+
+#custom-screenrecording-indicator {
+  font-size: 11px;
+  background: @background;
+  color: @color1;
+  border-radius: 10px;
+  margin-left: 8px;
+  padding: 3px 10px;
+}
+
+#custom-screenrecording-indicator.active {
+  background: @color1;
+  color: #fff;
+}
+
+/* === CLOCK === */
+#clock {
+  background: @background;
+  color: #fff;
+  border-radius: 10px;
+  border: 2px solid @foreground;
+  margin: 4px 10px;
+  padding: 3px 10px;
+  opacity: 0.85;
+}
+
+/* === SIDEBAR / ICONS === */
+#custom-sidebar,
+#custom-wallpaper,
+#custom-hyprpicker,
+#custom-nightlight {
+  color: @foreground;
+  font-size: 18px;
+  margin: 6px 8px;
+  opacity: 0.9;
+}
+
+/* === HIDDEN STATE === */
+.hidden {
+  opacity: 0;
+}

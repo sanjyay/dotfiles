@@ -1,0 +1,126 @@
+@import "../omarchy/current/theme/waybar.css";
+
+/* Core styling */
+* {
+  font-family: 'JetBrainsMono Nerd Font';
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  min-height: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Window base */
+window#waybar {
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+  opacity: 0.95;
+  border-bottom: 1px solid #313244;
+}
+
+/* Workspace buttons */
+#workspaces {
+  margin-left: 8px;
+  padding-right: 5px;
+}
+
+#workspaces button {
+  all: unset;
+  background: #313244;
+  color: #cdd6f4;
+  padding: 3px 8px;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+#workspaces button:hover {
+  background: #45475a;
+}
+
+#workspaces button.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+/* Module positioning */
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+/* Shared module styling */
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-omarchy,
+#custom-screenrecording-indicator,
+#custom-update {
+  background: #313244;
+  color: #cdd6f4;
+  margin: 2px 6px;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+#custom-expand-icon {
+  margin-right: 7px;
+}
+
+/* Clock and system info */
+#clock {
+  margin-left: 8.75px;
+  background: #45475a;
+  color: #f5e0dc;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Tooltip styling */
+tooltip {
+  padding: 4px 6px;
+  background-color: #313244;
+  color: #f5e0dc;
+  border-radius: 4px;
+}
+
+/* Update and recording indicators */
+#custom-update {
+  font-size: 11px;
+  background: #45475a;
+  color: #a6e3a1;
+}
+
+#custom-screenrecording-indicator {
+  font-size: 11px;
+  margin-left: 8.75px;
+  background: #45475a;
+  color: #f38ba8;
+}
+
+#custom-screenrecording-indicator.active {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* Sidebar and optional modules */
+#custom-sidebar,
+#custom-wallpaper,
+#custom-hyprpicker,
+#custom-nightlight {
+  padding: 0 10px;
+  color: #cdd6f4;
+}
