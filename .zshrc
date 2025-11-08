@@ -81,21 +81,6 @@ alias conda-init='eval "$(/home/goblin/build/miniconda3/bin/conda shell.zsh hook
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-#unalias yayf 2>/dev/null
-
-yayf() {
-  yay -Slq | fzf --multi \
-    --preview 'script -q -c "yay -Sii {1}" /dev/null' \
-    --preview-window=down:75% | xargs -ro yay -S
-}
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
-
 export ANDROID_HOME=/opt/android-sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
